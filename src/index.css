@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #4D44FF;
+    --bg-cobalt-dark: #3823D9;
+    --bg-cobalt-deep: #2A15C2;
+    --bg-card: rgba(42, 21, 194, 0.7);
+    --bg-card-hover: rgba(56, 35, 217, 0.85);
+    --color-pink-primary: #FFCCD5;
+    --color-pink-light: #FFEBF0;
+    --color-pink-muted: rgba(255, 204, 213, 0.8);
+    --border-pink: rgba(255, 204, 213, 0.35);
+    --border-white-subtle: rgba(255, 255, 255, 0.2);
+  }
+
+  body {
+    background-color: #4D44FF;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Syne', 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-poster {
+    font-family: 'Bebas Neue', 'Syne', sans-serif;
+    letter-spacing: 0.04em;
+  }
+
+  .font-mono-micro {
+    font-family: 'Space Mono', monospace;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #3823D9;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFCCD5;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFEBF0;
+}
+
+/* 3D Perspective & Transform Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1400 {
+  perspective: 1400px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.translate-z-10 {
+  transform: translateZ(10px);
+}
+
+.translate-z-20 {
+  transform: translateZ(20px);
+}
+
+.translate-z-30 {
+  transform: translateZ(30px);
+}
+
+.translate-z-40 {
+  transform: translateZ(40px);
+}
+
+.translate-z-50 {
+  transform: translateZ(50px);
+}
+
+/* Floating Animations */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 8s ease-in-out infinite;
+}
+
+/* Cobalt Glass Panels & Cards */
+.glass-panel {
+  background: rgba(42, 21, 194, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-panel-glow {
+  background: rgba(56, 35, 217, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 204, 213, 0.3);
+  box-shadow: 0 12px 36px 0 rgba(28, 12, 140, 0.4);
+}
+
+.glass-panel-pink {
+  background: rgba(255, 204, 213, 0.12);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 204, 213, 0.35);
+}
+
+/* Editorial typography & pill badges */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.875rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 204, 213, 0.6);
+  color: #FFCCD5;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pill-badge-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.875rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* High contrast primary buttons */
+.btn-pink-primary {
+  background-color: #FFCCD5;
+  color: #2612B0;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.btn-pink-primary:hover {
+  background-color: #FFE5EA;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -4px rgba(255, 204, 213, 0.4);
+}
+
+.btn-cobalt-secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.btn-cobalt-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+
