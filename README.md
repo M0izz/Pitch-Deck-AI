@@ -1,14 +1,14 @@
 <div align="center">
 
-# ⚡ PitchArchitect AI
+# PitchArchitect AI
 
 ### **Autonomous Multi-Agent Pitch Deck Studio & VC Audit Engine**
 
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Multi--Agent AI](https://img.shields.io/badge/Architecture-Multi--Agent_Swarm-FFCCD5?style=flat-square&logo=openai&logoColor=2612B0)](#-multi-agent-system-architecture)
-[![Export](https://img.shields.io/badge/Export-PPTX_%7C_PDF-4D44FF?style=flat-square)](#-production-grade-export)
+[![Multi--Agent AI](https://img.shields.io/badge/Architecture-Multi--Agent_Swarm-FFCCD5?style=flat-square&logo=openai&logoColor=2612B0)](#multi-agent-system-architecture)
+[![Export](https://img.shields.io/badge/Export-PPTX_%7C_PDF-4D44FF?style=flat-square)](#production-grade-export)
 [![License](https://img.shields.io/badge/License-MIT-white?style=flat-square)](LICENSE)
 
 <br />
@@ -19,20 +19,20 @@
 
 </div>
 
-## ✨ Key Highlights
+## Key Highlights
 
-- **🧠 5-Agent Collaborative Swarm**: Autonomous orchestration between Market Researcher, Narrative Architect, VC Critic, Revision Engine, and Taskmaster.
-- **📐 Grounded Bottom-Up Arithmetic**: Eliminates hallucinated market metrics with mathematically defended TAM, SAM, and SOM calculations based on target account density and ACVs.
-- **🛡️ 4 Simulated VC Partner Personas**: Stress-tests every slide against *SaaS Skeptics*, *Fintech Hawks*, *Deeptech Purists*, and *Consumer Growth* partners.
-- **📈 5-Dimension Institutional Rubric**: Instant institutional readiness scoring (/100) across Market Opportunity, Defensibility, Unit Economics, GTM Clarity, and Capital Ask.
-- **🔄 Autonomous Self-Correction & Refinement Diff**: Automated feedback loop that identifies weak claims and autonomously revises slides to increase investor readiness scores.
-- **📚 Curated Archetypes & PDF Deck Ingestion**: Ground decks against 9 historical seed decks (Airbnb, Uber, Stripe, etc.) or upload custom pitch PDFs for client-side indexing.
-- **📊 Native 16:9 PPTX & PDF Export**: Instant export to Microsoft PowerPoint (`.pptx`) and vector PDF (`.pdf`) preserving all formatting and typography.
-- **🎨 Editorial Poster Design System**: Electric Cobalt (`#4D44FF`) & Pastel Blush Pink (`#FFCCD5`) editorial aesthetics powered by `Bebas Neue`, `Syne`, `Space Grotesk`, and `Space Mono`.
+- **5-Agent Collaborative Swarm**: Autonomous orchestration between Market Researcher, Narrative Architect, VC Critic, Revision Engine, and Taskmaster.
+- **Grounded Bottom-Up Arithmetic**: Eliminates hallucinated market metrics with mathematically defended TAM, SAM, and SOM calculations based on target account density and ACVs.
+- **4 Simulated VC Partner Personas**: Stress-tests every slide against *SaaS Skeptics*, *Fintech Hawks*, *Deeptech Purists*, and *Consumer Growth* partners.
+- **5-Dimension Institutional Rubric**: Instant institutional readiness scoring (/100) across Market Opportunity, Defensibility, Unit Economics, GTM Clarity, and Capital Ask.
+- **Autonomous Self-Correction & Refinement Diff**: Automated feedback loop that identifies weak claims and autonomously revises slides to increase investor readiness scores.
+- **Curated Archetypes & PDF Deck Ingestion**: Ground decks against 9 historical seed decks (Airbnb, Uber, Stripe, etc.) or upload custom pitch PDFs for client-side indexing.
+- **Native 16:9 PPTX & PDF Export**: Instant export to Microsoft PowerPoint (`.pptx`) and vector PDF (`.pdf`) preserving all formatting and typography.
+- **Editorial Poster Design System**: Electric Cobalt (`#4D44FF`) & Pastel Blush Pink (`#FFCCD5`) editorial aesthetics powered by `Bebas Neue`, `Syne`, `Space Grotesk`, and `Space Mono`.
 
 ---
 
-## 🤖 Multi-Agent System Architecture
+## Multi-Agent System Architecture
 
 ```mermaid
 flowchart TD
@@ -62,7 +62,7 @@ flowchart TD
 
 ---
 
-## 👥 The Autonomous Agent Swarm
+## The Autonomous Agent Swarm
 
 | Agent Role | Responsibility | Key Output |
 | :--- | :--- | :--- |
@@ -74,7 +74,7 @@ flowchart TD
 
 ---
 
-## 🎯 10-Slide Standard Outline
+## 10-Slide Standard Outline
 
 Every generated pitch deck follows the institutional 11-point standard structure:
 
@@ -91,7 +91,7 @@ Every generated pitch deck follows the institutional 11-point standard structure
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Frontend Core**: React 19, TypeScript, Vite 6
 - **Styling**: Vanilla CSS & TailwindCSS design tokens (`Syne`, `Bebas Neue`, `Space Mono`, `Plus Jakarta Sans`)
@@ -102,7 +102,7 @@ Every generated pitch deck follows the institutional 11-point standard structure
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -135,7 +135,7 @@ Every generated pitch deck follows the institutional 11-point standard structure
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 Pitch-Deck-AI/
@@ -174,14 +174,14 @@ Pitch-Deck-AI/
 
 ---
 
-## 📦 Production-Grade Export
+## Production-Grade Export
 
 - **Microsoft PowerPoint (.pptx)**: Generates true widescreen 16:9 native shapes, cards, text frames, and color palettes ready for investor sharing and keynote editing.
 - **Portable Document Format (.pdf)**: High-resolution rasterized slide captures preserving all typography, glassmorphism, and color fidelity.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! If you'd like to improve the multi-agent heuristics, add new VC evaluation personas, or contribute historical deck archetypes:
 
@@ -193,7 +193,7 @@ Contributions are welcome! If you'd like to improve the multi-agent heuristics, 
 
 ---
 
-## 📄 License
+## License
 
 Distributed under the **MIT License**. See `LICENSE` for more information.
 
