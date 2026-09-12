@@ -44,7 +44,12 @@ export function conductMarketResearch(input: UserBusinessInput): ResearchDossier
   const idea = input.businessIdea || 'Autonomous Intelligence Platform';
   const vertical = input.industryVertical || 'B2B SaaS / Enterprise Software';
   const profile = detectDomainProfile(idea, vertical);
-  const audience = input.targetAudience || profile.primaryMetricName;
+  
+  // Guard against minimal or placeholder text like "Hi"
+  const rawAudience = (input.targetAudience || '').trim();
+  const audience = (rawAudience.length > 3 && rawAudience.toLowerCase() !== 'hi') 
+    ? rawAudience 
+    : profile.primaryMetricName;
   const seed = stringToSeed(idea + vertical + audience);
 
   // Derive dynamic TAM based on domain profile base + hash seed offset
@@ -64,11 +69,14 @@ export function conductMarketResearch(input: UserBusinessInput): ResearchDossier
     annualArpu = Math.round(annualArpu * 0.6 + ((seed % 5) * 800));
   } else if (rev.includes('enterprise') || rev.includes('custom') || rev.includes('$25k') || rev.includes('$50k') || rev.includes('annual')) {
     annualArpu = Math.round(annualArpu * 1.8 + ((seed % 6) * 4000));
-  } else if (rev.includes('consumer') || rev.includes('take-rate') || rev.includes('booking') || rev.includes('monthly')) {
+  } else if (rev.includes('consumer') || rev.includes('take-rate') || rev.includes('booking') || rev.includes('monthly') || rev.includes('seat')) {
     annualArpu = annualArpu < 2000 ? annualArpu : Math.round(annualArpu * 0.3);
   }
 
-  const targetUnitsLabel = `${audience.split(',')[0].trim()} Accounts`;
+  const cleanLabel = audience.split(',')[0].trim();
+  const targetUnitsLabel = cleanLabel.toLowerCase().includes('account') || cleanLabel.toLowerCase().includes('user') || cleanLabel.toLowerCase().includes('team')
+    ? cleanLabel
+    : `${cleanLabel} Accounts`;
   const targetBeachheadUnits = Math.max(120, Math.round((somVal * 1_000_000_000) / annualArpu));
 
   // Dynamic CAGR based on domain profile

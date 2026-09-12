@@ -2,38 +2,90 @@
 
 @layer base {
   :root {
-    --bg-main: #4D44FF;
-    --bg-cobalt-dark: #3823D9;
-    --bg-cobalt-deep: #2A15C2;
-    --bg-card: rgba(42, 21, 194, 0.7);
-    --bg-card-hover: rgba(56, 35, 217, 0.85);
+    --bg-main: #090C19;
+    --bg-surface-elevated: #11162C;
+    --bg-card: rgba(18, 24, 48, 0.85);
+    --bg-card-hover: rgba(28, 36, 68, 0.95);
+    --color-cobalt: #4D44FF;
+    --color-cobalt-light: #6A62FF;
     --color-pink-primary: #FFCCD5;
     --color-pink-light: #FFEBF0;
-    --color-pink-muted: rgba(255, 204, 213, 0.8);
+    --color-mint-accent: #05F1CD;
+    --color-cyan-accent: #38BDF8;
+    --color-amber-accent: #F59E0B;
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --border-cobalt-subtle: rgba(77, 68, 255, 0.35);
     --border-pink: rgba(255, 204, 213, 0.35);
-    --border-white-subtle: rgba(255, 255, 255, 0.2);
   }
 
   body {
-    background-color: #4D44FF;
-    color: #ffffff;
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #090C19;
+    color: #F8FAFC;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
   }
 
   h1, h2, h3, .font-display {
-    font-family: 'Syne', 'Space Grotesk', sans-serif;
-    letter-spacing: -0.02em;
+    font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, sans-serif;
+    letter-spacing: -0.025em;
+    font-weight: 800;
   }
 
   .font-poster {
-    font-family: 'Bebas Neue', 'Syne', sans-serif;
-    letter-spacing: 0.04em;
+    font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.01em;
+    font-weight: 900;
   }
 
   .font-mono-micro {
-    font-family: 'Space Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -0.01em;
   }
+}
+
+/* Slide Canvas Theme Presets */
+.slide-theme-graphite {
+  --slide-bg: #0F172A;
+  --slide-surface: #1E293B;
+  --slide-surface-alt: #162032;
+  --slide-border: rgba(255, 255, 255, 0.12);
+  --slide-text-primary: #F8FAFC;
+  --slide-text-muted: #94A3B8;
+  --slide-text-subtle: #64748B;
+  --slide-accent: #38BDF8;
+}
+
+.slide-theme-light {
+  --slide-bg: #FFFFFF;
+  --slide-surface: #F8FAFC;
+  --slide-surface-alt: #F1F5F9;
+  --slide-border: #E2E8F0;
+  --slide-text-primary: #0F172A;
+  --slide-text-muted: #475569;
+  --slide-text-subtle: #64748B;
+  --slide-accent: #2563EB;
+}
+
+.slide-theme-midnight {
+  --slide-bg: #0B1026;
+  --slide-surface: #121835;
+  --slide-surface-alt: #0E132D;
+  --slide-border: rgba(77, 68, 255, 0.25);
+  --slide-text-primary: #FFFFFF;
+  --slide-text-muted: #94A3B8;
+  --slide-text-subtle: #64748B;
+  --slide-accent: #05F1CD;
+}
+
+.slide-theme-aurora {
+  --slide-bg: radial-gradient(circle at 10% 20%, #161238 0%, #0B112C 60%, #091A30 100%);
+  --slide-surface: rgba(22, 28, 58, 0.85);
+  --slide-surface-alt: rgba(14, 18, 42, 0.9);
+  --slide-border: rgba(255, 255, 255, 0.14);
+  --slide-text-primary: #FFFFFF;
+  --slide-text-muted: #CBD5E1;
+  --slide-text-subtle: #94A3B8;
+  --slide-accent: #FFCCD5;
 }
 
 /* Custom Scrollbars */
@@ -42,14 +94,22 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #3823D9;
+  background: #0D1124;
 }
 ::-webkit-scrollbar-thumb {
-  background: #FFCCD5;
+  background: #313A63;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FFEBF0;
+  background: #4D44FF;
+}
+
+/* Subtle Architectural Grid Pattern */
+.bg-grid-architectural {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
 }
 
 /* 3D Perspective & Transform Utilities */
@@ -112,26 +172,27 @@
   animation: float-reverse 8s ease-in-out infinite;
 }
 
-/* Cobalt Glass Panels & Cards */
+/* Architectural Glass Panels & Cards */
 .glass-panel {
-  background: rgba(42, 21, 194, 0.75);
+  background: rgba(18, 23, 46, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.5);
 }
 
 .glass-panel-glow {
-  background: rgba(56, 35, 217, 0.85);
+  background: rgba(22, 28, 56, 0.9);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 204, 213, 0.3);
-  box-shadow: 0 12px 36px 0 rgba(28, 12, 140, 0.4);
+  border: 1px solid rgba(77, 68, 255, 0.4);
+  box-shadow: 0 16px 48px -8px rgba(77, 68, 255, 0.25);
 }
 
 .glass-panel-pink {
-  background: rgba(255, 204, 213, 0.12);
+  background: rgba(255, 204, 213, 0.08);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 204, 213, 0.35);
+  border: 1px solid rgba(255, 204, 213, 0.3);
 }
 
 /* Editorial typography & pill badges */
@@ -141,8 +202,39 @@
   gap: 0.375rem;
   padding: 0.25rem 0.875rem;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 204, 213, 0.6);
+  border: 1px solid rgba(255, 204, 213, 0.5);
+  background: rgba(255, 204, 213, 0.08);
   color: #FFCCD5;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pill-badge-cobalt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.875rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(77, 68, 255, 0.5);
+  background: rgba(77, 68, 255, 0.15);
+  color: #A5B4FC;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pill-badge-mint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.875rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(5, 241, 205, 0.5);
+  background: rgba(5, 241, 205, 0.12);
+  color: #05F1CD;
   font-family: 'Space Mono', monospace;
   font-size: 0.6875rem;
   text-transform: uppercase;
@@ -155,7 +247,8 @@
   gap: 0.375rem;
   padding: 0.25rem 0.875rem;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
   color: #ffffff;
   font-family: 'Space Mono', monospace;
   font-size: 0.6875rem;
@@ -166,7 +259,7 @@
 /* High contrast primary buttons */
 .btn-pink-primary {
   background-color: #FFCCD5;
-  color: #2612B0;
+  color: #120A47;
   font-weight: 700;
   border-radius: 0.75rem;
   transition: all 0.2s ease;
@@ -175,21 +268,35 @@
 .btn-pink-primary:hover {
   background-color: #FFE5EA;
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px -4px rgba(255, 204, 213, 0.4);
+  box-shadow: 0 8px 24px -4px rgba(255, 204, 213, 0.3);
+}
+
+.btn-cobalt-primary {
+  background-color: #4D44FF;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.btn-cobalt-primary:hover {
+  background-color: #5E56FF;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -4px rgba(77, 68, 255, 0.4);
 }
 
 .btn-cobalt-secondary {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.06);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   font-weight: 600;
   border-radius: 0.75rem;
   transition: all 0.2s ease;
 }
 
 .btn-cobalt-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 

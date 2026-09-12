@@ -46,23 +46,23 @@ export const ReferenceDeckLibrary: React.FC<ReferenceDeckLibraryProps> = ({
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full bg-[#3823D9] text-[#FFCCD5] border border-[#FFCCD5]/30 mb-2 uppercase tracking-widest font-mono">
+          <div className="inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full bg-[#4D44FF]/15 text-[#A5B4FC] border border-[#4D44FF]/30 mb-2 uppercase tracking-widest font-mono">
             <BookOpen className="w-3.5 h-3.5 text-[#FFCCD5]" />
             Historical Reference Archetypes &amp; Standard Outline
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-poster tracking-wide">
             Curated Pitch Deck Knowledge Base &amp; PDF Ingestion
           </h2>
-          <p className="text-xs text-[#FFCCD5]/90 mt-1 font-sans">
+          <p className="text-xs text-slate-400 mt-1 font-sans">
             Synthesized structural metadata from 9 iconic historical fundraises and the universal 11-point standard pitch outline.
           </p>
         </div>
 
-        {/* Upload Custom PDF Button */}
-        <div className="relative">
-          <label className="cursor-pointer inline-flex items-center gap-2 px-5 py-3 rounded-2xl text-xs font-bold bg-[#FFCCD5] hover:bg-[#FFE5EA] text-[#2612B0] shadow-lg transition-all font-mono uppercase tracking-wider">
-            <Upload className="w-4 h-4" />
-            <span>{isUploading ? 'Indexing PDF...' : 'Upload & Index PDF Deck'}</span>
+        {/* Upload Custom Deck Button */}
+        <div>
+          <label className="btn-cobalt-primary px-4 py-2.5 rounded-xl text-xs font-bold cursor-pointer inline-flex items-center gap-2 shadow-lg transition-all">
+            <Upload className="w-4 h-4 text-[#FFCCD5]" />
+            <span>{isUploading ? 'Extracting & Indexing...' : 'Upload Pitch PDF'}</span>
             <input
               type="file"
               accept=".pdf"
@@ -75,10 +75,10 @@ export const ReferenceDeckLibrary: React.FC<ReferenceDeckLibraryProps> = ({
       </div>
 
       {/* Standard 11-Point Pitch Outline Callout */}
-      <div className="bg-[#2A15C2]/95 rounded-3xl p-6 border border-white/20 shadow-2xl text-white">
+      <div className="bg-[#11162C] rounded-3xl p-6 border border-white/10 shadow-2xl text-white">
         <div className="flex items-center gap-2 mb-3">
-          <Compass className="w-4 h-4 text-[#FFCCD5]" />
-          <span className="text-xs font-bold uppercase tracking-widest text-[#FFCCD5] font-mono">
+          <Compass className="w-4 h-4 text-[#05F1CD]" />
+          <span className="text-xs font-bold uppercase tracking-widest text-[#05F1CD] font-mono">
             Universal Institutional Standard Pitch Outline (11 Points)
           </span>
         </div>
@@ -86,9 +86,9 @@ export const ReferenceDeckLibrary: React.FC<ReferenceDeckLibraryProps> = ({
           {STANDARD_PITCH_OUTLINE.map((step, idx) => (
             <span
               key={idx}
-              className="px-3 py-1.5 rounded-xl bg-[#1E0E99]/90 border border-white/15 text-xs font-mono text-white flex items-center gap-1.5"
+              className="px-3 py-1.5 rounded-xl bg-[#181E38] border border-white/10 text-xs font-mono text-slate-300 flex items-center gap-1.5"
             >
-              <strong className="text-[#FFCCD5] text-[10px]">0{idx + 1}.</strong>
+              <strong className="text-[#05F1CD] text-[10px]">0{idx + 1}.</strong>
               <span>{step}</span>
             </span>
           ))}
@@ -99,7 +99,7 @@ export const ReferenceDeckLibrary: React.FC<ReferenceDeckLibraryProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Column: Deck List */}
         <div className="space-y-3 max-h-[640px] overflow-y-auto pr-1">
-          <div className="text-[10px] font-bold uppercase tracking-widest text-[#FFCCD5] font-mono mb-2">
+          <div className="text-[10px] font-bold uppercase tracking-widest text-[#A5B4FC] font-mono mb-2">
             9 Historical Archetypes &amp; Frameworks
           </div>
 
@@ -109,23 +109,23 @@ export const ReferenceDeckLibrary: React.FC<ReferenceDeckLibraryProps> = ({
               onClick={() => setSelectedDeck(deck)}
               className={`p-4 rounded-2xl border cursor-pointer transition-all ${
                 selectedDeck.id === deck.id
-                  ? 'bg-[#FFCCD5] border-[#FFCCD5] text-[#2612B0] shadow-lg scale-[1.02] font-bold'
-                  : 'bg-[#2A15C2]/90 border-white/20 text-white hover:bg-[#3823D9]'
+                  ? 'bg-[#4D44FF] border-[#6A62FF] text-white shadow-lg scale-[1.02] font-bold'
+                  : 'bg-[#11162C] border-white/10 text-slate-300 hover:text-white hover:bg-[#181E38]'
               }`}
             >
               <div className="flex items-center justify-between mb-1">
-                <span className={`text-xs font-bold font-display ${selectedDeck.id === deck.id ? 'text-[#2612B0]' : 'text-white'}`}>{deck.name}</span>
-                <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full font-mono uppercase ${selectedDeck.id === deck.id ? 'bg-[#2612B0] text-white' : 'bg-[#1E0E99] text-[#FFCCD5]'}`}>
+                <span className={`text-xs font-bold font-display ${selectedDeck.id === deck.id ? 'text-white' : 'text-slate-200'}`}>{deck.name}</span>
+                <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full font-mono uppercase ${selectedDeck.id === deck.id ? 'bg-white/20 text-white' : 'bg-[#181E38] text-[#FFCCD5]'}`}>
                   {deck.year} • {deck.stage}
                 </span>
               </div>
-              <p className={`text-[11px] line-clamp-1 ${selectedDeck.id === deck.id ? 'text-[#2612B0]/80' : 'text-[#FFCCD5]/80'}`}>{deck.industry}</p>
+              <p className={`text-[11px] line-clamp-1 ${selectedDeck.id === deck.id ? 'text-white/80' : 'text-slate-400'}`}>{deck.industry}</p>
             </div>
           ))}
 
           {customDecks.length > 0 && (
             <>
-              <div className="text-[10px] font-bold uppercase tracking-widest text-[#FFCCD5] font-mono mt-4 mb-2">
+              <div className="text-[10px] font-bold uppercase tracking-widest text-[#A5B4FC] font-mono mt-4 mb-2">
                 Custom Uploaded &amp; Indexed Decks ({customDecks.length})
               </div>
               {customDecks.map((cd) => (
@@ -134,17 +134,17 @@ export const ReferenceDeckLibrary: React.FC<ReferenceDeckLibraryProps> = ({
                   onClick={() => setSelectedDeck(cd.summaryArchetype)}
                   className={`p-4 rounded-2xl border cursor-pointer transition-all ${
                     selectedDeck.id === cd.id
-                      ? 'bg-[#FFCCD5] border-[#FFCCD5] text-[#2612B0] shadow-lg scale-[1.02] font-bold'
-                      : 'bg-[#2A15C2]/90 border-white/20 text-white hover:bg-[#3823D9]'
+                      ? 'bg-[#4D44FF] border-[#6A62FF] text-white shadow-lg scale-[1.02] font-bold'
+                      : 'bg-[#11162C] border-white/10 text-slate-300 hover:text-white hover:bg-[#181E38]'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-1">
-                    <span className={`text-xs font-bold font-display ${selectedDeck.id === cd.id ? 'text-[#2612B0]' : 'text-white'}`}>{cd.title}</span>
-                    <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-[#1E0E99] text-[#FFCCD5] border border-white/20 font-mono uppercase">
+                    <span className={`text-xs font-bold font-display ${selectedDeck.id === cd.id ? 'text-white' : 'text-slate-200'}`}>{cd.title}</span>
+                    <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-[#181E38] text-[#05F1CD] border border-white/10 font-mono uppercase">
                       {cd.pageCount} slides
                     </span>
                   </div>
-                  <p className="text-[11px] text-[#FFCCD5]/70 line-clamp-1 font-mono">Indexed at {cd.indexedAt}</p>
+                  <p className="text-[11px] text-slate-400 line-clamp-1 font-mono">Indexed at {cd.indexedAt}</p>
                 </div>
               ))}
             </>
@@ -152,27 +152,27 @@ export const ReferenceDeckLibrary: React.FC<ReferenceDeckLibraryProps> = ({
         </div>
 
         {/* Right Column: Detailed Deck Inspector */}
-        <div className="lg:col-span-2 bg-[#2A15C2]/95 rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl space-y-6 text-white">
+        <div className="lg:col-span-2 bg-[#11162C] rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl space-y-6 text-white">
           {/* Header Bar */}
-          <div className="border-b border-white/15 pb-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="border-b border-white/10 pb-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <div className="flex items-center gap-3">
                 <h3 className="text-2xl font-bold text-white font-display">{selectedDeck.name}</h3>
-                <span className="text-[10px] px-3 py-1 rounded-full bg-[#3823D9] text-[#FFCCD5] font-mono font-bold uppercase tracking-wider border border-[#FFCCD5]/30">
+                <span className="text-[10px] px-3 py-1 rounded-full bg-[#4D44FF]/15 text-[#A5B4FC] font-mono font-bold uppercase tracking-wider border border-[#4D44FF]/30">
                   {selectedDeck.stage} • {selectedDeck.year}
                 </span>
               </div>
-              <p className="text-xs text-[#FFCCD5]/90 mt-1 font-mono">
-                {selectedDeck.location}  •  Amount Raised: <strong className="text-white font-bold">{selectedDeck.amountRaised}</strong>
+              <p className="text-xs text-slate-400 mt-1 font-mono">
+                {selectedDeck.location}  •  Amount Raised: <strong className="text-[#05F1CD] font-bold">{selectedDeck.amountRaised}</strong>
               </p>
             </div>
 
             {onSelectArchetypeForGrounding && (
               <button
                 onClick={() => onSelectArchetypeForGrounding(selectedDeck.id)}
-                className="text-xs px-4 py-2.5 rounded-xl bg-[#FFCCD5] hover:bg-[#FFE5EA] text-[#2612B0] font-bold transition-all flex items-center gap-2 shadow-lg self-start sm:self-auto font-mono uppercase tracking-wider"
+                className="text-xs px-4 py-2.5 rounded-xl btn-pink-primary transition-all flex items-center gap-2 shadow-lg self-start sm:self-auto font-mono uppercase tracking-wider cursor-pointer"
               >
-                <Zap className="w-3.5 h-3.5 text-[#2612B0]" />
+                <Zap className="w-3.5 h-3.5" />
                 Ground Pitch With Archetype
               </button>
             )}
@@ -180,40 +180,40 @@ export const ReferenceDeckLibrary: React.FC<ReferenceDeckLibraryProps> = ({
 
           {/* Metadata Cards: Industry & Business Model */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
-            <div className="p-4 rounded-2xl bg-[#1E0E99]/90 border border-white/15">
-              <span className="text-[10px] uppercase font-bold text-[#FFCCD5] block mb-1 font-mono tracking-wider">Industry Vertical</span>
+            <div className="p-4 rounded-2xl bg-[#181E38] border border-white/10">
+              <span className="text-[10px] uppercase font-bold text-slate-400 block mb-1 font-mono tracking-wider">Industry Vertical</span>
               <strong className="text-white font-semibold">{selectedDeck.industry}</strong>
             </div>
-            <div className="p-4 rounded-2xl bg-[#1E0E99]/90 border border-white/15">
-              <span className="text-[10px] uppercase font-bold text-[#FFCCD5] block mb-1 font-mono tracking-wider">Business Model</span>
+            <div className="p-4 rounded-2xl bg-[#181E38] border border-white/10">
+              <span className="text-[10px] uppercase font-bold text-slate-400 block mb-1 font-mono tracking-wider">Business Model</span>
               <strong className="text-white font-semibold">{selectedDeck.businessModel}</strong>
             </div>
           </div>
 
           {/* Key Lesson Callout */}
-          <div className="p-5 rounded-2xl bg-[#3823D9]/90 border border-[#FFCCD5]/30 shadow-inner">
-            <div className="flex items-center gap-2 text-xs font-bold text-[#FFCCD5] uppercase tracking-widest mb-1.5 font-mono">
-              <Lightbulb className="w-4 h-4 text-[#FFCCD5]" />
+          <div className="p-5 rounded-2xl bg-[#181E38] border border-[#05F1CD]/30 shadow-inner">
+            <div className="flex items-center gap-2 text-xs font-bold text-[#05F1CD] uppercase tracking-widest mb-1.5 font-mono">
+              <Lightbulb className="w-4 h-4 text-[#05F1CD]" />
               Key Takeaway for Founders:
             </div>
-            <p className="text-sm text-white font-normal leading-relaxed italic">
+            <p className="text-sm text-slate-200 font-normal leading-relaxed italic">
               "{selectedDeck.keyLesson}"
             </p>
           </div>
 
           {/* Ordered Slide Sequence */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#FFCCD5] mb-3 flex items-center gap-2 font-mono">
-              <Layers className="w-3.5 h-3.5 text-[#FFCCD5]" />
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#A5B4FC] mb-3 flex items-center gap-2 font-mono">
+              <Layers className="w-3.5 h-3.5 text-[#A5B4FC]" />
               Ordered Slide Sequence (Narrative Architecture):
             </h4>
             <div className="flex flex-wrap gap-2">
               {selectedDeck.slideSequence.map((role, idx) => (
                 <span
                   key={idx}
-                  className="px-3 py-1.5 rounded-xl bg-[#1E0E99]/90 border border-white/15 text-xs font-mono text-white flex items-center gap-1.5"
+                  className="px-3 py-1.5 rounded-xl bg-[#181E38] border border-white/10 text-xs font-mono text-slate-300 flex items-center gap-1.5"
                 >
-                  <span className="text-[#FFCCD5] font-bold">{idx + 1}.</span>
+                  <span className="text-[#05F1CD] font-bold">{idx + 1}.</span>
                   <span>{role}</span>
                 </span>
               ))}
@@ -222,14 +222,14 @@ export const ReferenceDeckLibrary: React.FC<ReferenceDeckLibraryProps> = ({
 
           {/* Narrative Notes */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#FFCCD5] mb-3 flex items-center gap-2 font-mono">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#A5B4FC] mb-3 flex items-center gap-2 font-mono">
               <Sparkles className="w-3.5 h-3.5 text-[#FFCCD5]" />
               Narrative Effectiveness Notes:
             </h4>
-            <ul className="space-y-2 text-xs text-white">
+            <ul className="space-y-2 text-xs text-slate-300">
               {selectedDeck.narrativeNotes.map((note, idx) => (
-                <li key={idx} className="flex items-start gap-3 bg-[#1E0E99]/90 p-3.5 rounded-2xl border border-white/15">
-                  <span className="w-2 h-2 rounded-full bg-[#FFCCD5] mt-1.5 flex-shrink-0" />
+                <li key={idx} className="flex items-start gap-3 bg-[#181E38] p-3.5 rounded-2xl border border-white/10">
+                  <span className="w-2 h-2 rounded-full bg-[#05F1CD] mt-1.5 flex-shrink-0" />
                   <span className="leading-relaxed">{note}</span>
                 </li>
               ))}
